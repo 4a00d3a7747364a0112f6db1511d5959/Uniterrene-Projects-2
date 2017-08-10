@@ -1,0 +1,197 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magento.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magento.com for more information.
+ *
+ * @category    design
+ * @package     rwd_default
+ * @copyright   Copyright (c) 2006-2016 X.commerce, Inc. and affiliates (http://www.magento.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<?php /** @var $this Mage_Checkout_Block_Cart_Shipping */ ?>
+<?php 
+$cart = Mage::getModel('checkout/cart')->getQuote();
+       // UPS allowed by default   (unless height attrib greater than 165)
+foreach ($cart->getAllItems() as $item) {
+   $productId = $item->getProduct()->getId();
+   $uspsAllowed = false;
+   $ltlAllowed = false;
+   $uspsAllowed_final;
+   $obj = Mage::getModel('catalog/product');
+$_product = $obj->load($productId);
+ $pck_name = $_product->getPackageName();
+   if($pck_name == 4)
+   {
+	   $uspsAllowed = true;
+   }
+   else
+   {
+	   $ltlAllowed = true;
+   }
+   if($ltlAllowed == true)
+   {
+	   
+	   $uspsAllowed_final = "false";
+   }
+   
+   
+} ?>
+
+<div class="shipping">
+	<?php foreach($this->getItems() as $_item){
+ $_Configproduct = $_item->getProduct();
+ $simpleProduct=Mage::getModel('catalog/product')->loadByAttribute('sku', $_item->getSku());
+//echo $simpleProduct->getId();
+}?>
+    <h2><?php echo $this->__('Shipping Charge') ?></h2>
+    <div class="shipping-form">
+
+        <script type="text/javascript">
+        //<![CDATA[
+            new RegionUpdater('country', 'region', 'region_id', <?php echo $this->helper('directory')->getRegionJson() ?>);
+        //]]>
+        </script>
+
+        <?php if (($_shippingRateGroups = $this->getEstimateRates())): ?>
+        <form id="co-shipping-method-form" action="<?php echo $this->getUpdateFormActionUrl() ?>">
+            <dl class="sp-methods">
+                <?php foreach ($_shippingRateGroups as $code => $_rates): ?>
+                <?php //echo $this->escapeHtml($this->getCarrierName($code)) ?>
+                
+
+                    <dd>
+                        <ul>
+                        <?php foreach ($_rates as $_rate): ?>
+                            <li<?php if ($_rate->getErrorMessage()) echo ' class="error-msg"';?>>
+                               <?php if ($_rate->getErrorMessage()): ?>
+                                    <?php echo $this->escapeHtml($_rate->getErrorMessage()) ?>
+                               <?php else: ?>
+                               
+								<?php if($uspsAllowed == true && $uspsAllowed_final !="false"){ ?>
+								<?php //echo $_rate->getCode() ;?>
+								 <?php if($_rate->getCode() !="flatrate_flatrate") { ?>
+										
+                                    <label for="s_method_<?php echo $_rate->getCode() ?>"><?php echo $this->escapeHtml($_rate->getMethodTitle()) ?>
+                                    <?php $_excl = $this->getShippingPrice($_rate->getPrice(), $this->helper('tax')->displayShippingPriceIncludingTax()); ?>
+                                    -
+                                    <?php $_incl = $this->getShippingPrice($_rate->getPrice(), true); ?>
+                                    <?php echo $_excl; ?>
+                                    <?php if ($this->helper('tax')->displayShippingBothPrices() && $_incl != $_excl): ?>
+                                        (<?php echo $this->__('Incl. Tax'); ?> <?php echo $_incl; ?>)
+                                    <?php endif; ?>
+                                      
+                                    </label>
+
+                                 
+                                 <?php } 
+                                 } ?>
+                                 
+                               <?php if($ltlAllowed == true || $uspsAllowed_final =="false") {$disable_other;
+								   
+								   	  if($_rate->getCode() =="freeshipping_freeshipping") { $disable_other = "yes";} 
+								    ?>  
+								   
+                                      <?php if( $_rate->getCode() != "oscpflatshiprate_oscpflatshiprate" ) {
+										  
+										  //~ if($_rate->getCode() =="freeshipping_freeshipping")
+										  //~ {
+											  
+										  //~ }
+										  //~ else
+										  //~ {
+										  
+										   ?>
+											
+                                    <label id="rub_<?php echo $_rate->getCode() ?>" for="s_method_<?php echo $_rate->getCode() ?>"><?php echo $this->escapeHtml($_rate->getMethodTitle()) ?>
+                                    <?php $_excl = $this->getShippingPrice($_rate->getPrice(), $this->helper('tax')->displayShippingPriceIncludingTax()); ?>
+                                    -
+                                    <?php $_incl = $this->getShippingPrice($_rate->getPrice(), true); ?>
+                                    <?php echo $_excl; ?>
+                                    <?php if ($this->helper('tax')->displayShippingBothPrices() && $_incl != $_excl): ?>
+                                        (<?php echo $this->__('Incl. Tax'); ?> <?php echo $_incl; ?>)
+                                    <?php endif; ?>
+                                      
+                                    </label>
+                                    
+                                   
+                                    
+                                    
+                                 <?php  //}
+                                 
+									} 
+                                 } ?>
+                               <?php endif ?>
+                            </li> 
+                            
+                            
+                            
+                        <?php endforeach; ?>
+                        </ul>
+                    </dd>
+                <?php endforeach; ?>
+            </dl>
+<!--
+            <div class="buttons-set">
+                <button type="submit" title="<?php echo $this->quoteEscape($this->__('Update Total')) ?>" class="button" name="do" value="<?php echo $this->__('Update Total') ?>">
+                    <span><span><?php echo $this->__('Update Total') ?></span></span>
+                </button>
+            </div>
+-->
+        </form>
+        <?php endif; ?>
+         <span id="ups_disabled" style="display:none;"><?php echo $disable_other; ?></span>
+        <script>
+        //<![CDATA[
+            var coShippingMethodForm = new VarienForm('shipping-zip-form');
+            var countriesWithOptionalZip = <?php echo $this->helper('directory')->getCountriesWithOptionalZip(true) ?>;
+
+            coShippingMethodForm.submit = function () {
+                var country = $F('country');
+                var optionalZip = false;
+
+                for (i=0; i < countriesWithOptionalZip.length; i++) {
+                    if (countriesWithOptionalZip[i] == country) {
+                        optionalZip = true;
+                    }
+                }
+                if (optionalZip) {
+                    $('postcode').removeClassName('required-entry');
+                }
+                else {
+                    $('postcode').addClassName('required-entry');
+                }
+                return VarienForm.prototype.submit.bind(coShippingMethodForm)();
+            }
+        //]]>
+        /*Custom Code Added By Shourya*/
+        
+        
+        </script>
+        
+    </div>
+</div>
+
+<!--
+ <div class="cart-details-icon">
+   <div class="accept-credit-cards"> <img src="http://www.uniterreneprojects.com/dev/rmaid/images/logo_paypal.gif" /></div>
+   <div class="ssl_lock"><img src="http://www.uniterreneprojects.com/dev/rmaid/images/comodo_secure.png" /></div>
+ </div>
+-->
+ 
+

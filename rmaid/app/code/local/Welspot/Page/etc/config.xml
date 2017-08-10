@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+<modules>
+    <Welspot_Page>
+    <version>0.1.0</version>
+    </Welspot_Page>
+</modules>
+<global>
+    <page>
+    <layouts>
+        <welspot_one_column_cms module="page" translate="label">
+        <label>Welspot One Column</label>
+        <template>page/welspot_one_column.phtml</template>
+        <layout_handle>welspot_one_column_cms</layout_handle>
+        </welspot_one_column_cms>
+    </layouts>
+    </page>
+</global>
+</config>  

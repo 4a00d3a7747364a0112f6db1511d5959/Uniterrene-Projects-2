@@ -1,0 +1,163 @@
+<?php
+/**
+ * Template for Map in the location
+ */
+?>
+
+<table border="0" width="100%" cellspacing="0" cellpadding="0" class="templateinfoBox">
+            <tr>
+<!--
+              <td align="left" width="5" background="/templates/Pixame_v1/images/infobox/box_bg_l.gif" >
+              <img src="/templates/Pixame_v1/images/infobox/box_bg_l.gif" border="0" alt="box_bg_l.gif." width="5" height="10">              </td>
+-->
+              <td>
+              <table border="0" width="100%" cellspacing="0" cellpadding="3" class="infoBoxContents">
+                <tr>
+                  <td class="main">
+                  <table border="0" cellspacing="0" cellpadding="2" align="right" width="100%" style="border-collapse: collapse" bordercolor="#111111">
+                    <tr>
+                      <td>
+      <!--Lango Added for Template MOD: EOF-->
+          <tr>
+            <td class="main_123"><SCRIPT language=javascript>
+
+  function singleLocation(name, add1, add2, wc) {
+    myInfo.innerHTML = "<table>" +
+                         "<tr>" +
+                           "<td align=middle class=main>" +
+                             "<span>" +
+                               "<strong>" + name + "</strong>" +
+                             "</span><br>" +
+                             add1 + "<br>" +
+                             add2 + "<br>" +
+                             "Will Call: " + wc +
+                           "</td>" +
+                         "</tr>" +
+                       "</table>";
+  }
+
+  function doubleLocation(namea, add1a, add2a, wca, nameb, add1b, add2b, wcb) {
+    myInfo.innerHTML = "<table>" +
+                         "<tr>" +
+                           "<td align=middle class=body>" +
+                             "<span class=loginHeader>" +
+                               namea +
+                             "</span><br>" +
+                             add1a + "<br>" +
+                             add2a + "<br>" +
+                             "Will Call: " + wca +
+                           "</td>" +
+                           "<td width=20>" +
+                           "</td>" +
+                           "<td align=middle class=body>" + 
+                             "<span class=loginHeader>" +
+                               nameb +
+                             "</span><br>" +
+                             add1b + "<br>" +
+                             add2b + "<br>" +
+                             "Will Call: " + wcb +
+                           "</td>" +
+                         "</tr>" +
+                       "</table>";
+  }
+
+ 
+
+  </SCRIPT>
+
+             <TABLE border=0 cellSpacing=0 cellPadding=0 width="100%">
+<TBODY>
+<TR>
+<TD class=body>
+<TABLE width="100%">
+<TBODY>
+<TR>
+<TD>
+<DIV style="margin-top:40px;" class=main align=center><STRONG>All locations are non-retail and are not 
+open to the public (will call only).</STRONG><BR>Please do not send  
+payments/checks to any of our warehouse locations.<BR><STRONG>All checks must go 
+to:<BR></STRONG>Rubbermaid Wholesale<BR>3980 Broadway Suite 103-118<br>
+Boulder, CO 80304</DIV></TD></TR>
+<TR height=100>
+<TD id=myInfo align=middle>
+<DIV class=main align=center><STRONG>Select a Location</STRONG></DIV></TD></TR>
+<TR>
+<TD align=middle>
+<div align=center>
+  <img src="http://www.uniterreneprojects.com/dev/rmaid/skin/frontend/rubbermaid/default/images/RMWS-Locations.jpg" width="720px" height="450px" usemap="#Map2" border=0 />
+  <map name="Map2" id="Map2">
+    <area onmouseover="singleLocation('Seattle','18351 Cascade Avenue.','Tukwila, WA 98188','7:00am - 5:00pm')" shape="circle" coords="80,42,23" href="#" />
+    <area onmouseover="singleLocation('Portland','14330 N Lombard St.','Portland, OR 97203','6:00am - 4:00pm')" shape="circle" coords="65,87,22" href="#" />
+    <area onmouseover="singleLocation('Sacramento','5440 Stationers Way','Sacramento, CA 95842','8:00am - 4:00pm')" shape="circle" coords="64,169,23" href="#" />
+    <area onmouseover="singleLocation('San Francisco','4100 Whipple Road','Union City, CA 94587','8:00am - 4:00pm')" shape="circle" coords="48,206,21" href="#" />
+    <area onmouseover="singleLocation('Salt Lake City','4625 West 1730 South','Salt Lake City, UT 84104','7:00am - 5:00pm')" shape="circle" coords="172,177,21" href="#" />
+    <area onmouseover="singleLocation('Los Angeles','3963 Workman Mill Rd. Bldg. A','Whitter, CA 90601','7:30am - 5:00pm')" shape="circle" coords="69,268,24" href="#" />
+    <area onmouseover="singleLocation('Phoenix','1002 S. 63rd Ave. Suite 104','Phoenix, AZ 85043','7:30am - 5:30pm')" shape="circle" coords="152,293,20" href="#" />
+    <area onmouseover="singleLocation('Denver','9910 47th Avenue','Denver, CO 80238','9:00am - 4:00pm')" shape="circle" coords="236,203,25" href="#" />
+    <area onmouseover="singleLocation('Minneapolis','1720 Alexander Road','Eagan, MN 55121','8:00am - 6:00pm')" shape="circle" coords="368,110,22" href="#" />
+    <area onmouseover="singleLocation('Kansas City','1606 Linn Street','N. Kansas City, MO 64116','8:00am - 6:00pm')" shape="circle" coords="364,210,21" href="#" />
+    <area onmouseover="singleLocation('Tulsa','1870 N. 109th East Ave.','Tulsa, OK 74116','7:00am - 6:00pm')" shape="circle" coords="368,256,17" href="#" />
+    <area onmouseover="singleLocation('Dallas','410 West Trinity Blvd. Suite 100','Grand Prairie, TX 75050','7:00am - 5:00pm')" shape="circle" coords="338,317,18" href="#" />
+    <area onmouseover="singleLocation('Houston ','7677 Pinemont Drive','Houston, TX 77040','7:00am - 6:00pm')" shape="circle" coords="361,361,19" href="#" />
+    <area onmouseover="singleLocation('San Antonio ','4500 N.E. Loop 410, Suite 100','San Antonio, TX 78218','7:00am - 6:00pm')" shape="circle" coords="315,384,23" href="#" />
+    <area onmouseover="singleLocation('Grand Rapids ','2640 Northridge Drive','Walker, MI 49544','8:00am - 5:00pm')" shape="circle" coords="480,133,21" href="#" />
+    <area onmouseover="singleLocation('Chicago ','810 Kimberly Court','Carol Stream, IL 60188','6:00am - 6:00pm')" shape="circle" coords="443,166,18" href="#" />
+    <area onmouseover="singleLocation('St. Louis ','2000 Wolf Business Park','Greenville, IL 62246','7:00am - 6:00pm')" shape="circle" coords="417,236,16" href="#" />
+    <area onmouseover="singleLocation('Memphis','5300 Hickory Hills Road','Memphis, TN 38141','7:00am - 5:00pm')" shape="circle" coords="441,271,19" href="#" />
+    <area onmouseover="singleLocation('Pittsburgh','270 48th Street','Pittsburgh, PA 15201','7:00am - 5:30pm')" shape="circle" coords="533,157,19" href="#" />
+    <area onmouseover="singleLocation('Cleveland ','2100 Highland Road','Twinsburg, OH 44087','7:00am - 5:00pm')" shape="circle" coords="507,175,15" href="#" />
+    <area onmouseover="singleLocation('Columbus ','1634 Westbelt Drive','Columbus, OH 43228','8:00am - 5:00pm')" shape="circle" coords="519,191,15" href="#" />
+    <area onmouseover="singleLocation('Indianapolis   ','5345 West 81st Street','Indianapolis, IN 46268','6:00am - 7:00pm')" shape="circle" coords="467,213,19" href="#" />
+    <area onmouseover="singleLocation('Nashville ','455 Industrial Blvd., Suite A','La Vergne, TN 37086','8:00am - 4:00pm')" shape="circle" coords="483,242,17" href="#" />
+    <area onmouseover="singleLocation('Atlanta  ','125 Horizon Drive','Suwanee, GA 30024','6:00am - 6:00pm')" shape="circle" coords="512,294,23" href="#" />
+    <area onmouseover="singleLocation('Orlando  ','2405 Commerce Park Drive','Orlando, FL 32819','8:00am - 5:00pm')" shape="circle" coords="566,354,22" href="#" />
+    <area onmouseover="singleLocation('Tampa  ','9945 Currie Davis Dr.','Tampa, FL 33619','6:00am - 6:00pm')" shape="circle" coords="547,380,17" href="#" />
+    <area onmouseover="singleLocation('Miami  ','10801 NW 103rd Street, Suite 11',' Suite 11, FL 33178','8:00am - 5:00pm')" shape="circle" coords="578,399,17" href="#" />
+    <area onmouseover="singleLocation('Charlotte  ','10800 Withers Cove Park Drive',' Charlotte, NC 28278','8:00am - 6:00pm')" shape="circle" coords="558,261,21" href="#" />
+    <area onmouseover="singleLocation('Raleigh  ','3071 Business Park Dr. Suite 100',' Raleigh, NC 27610','8:00am - 5:00pm')" shape="circle" coords="570,228,17" href="#" />
+    <area onmouseover="singleLocation('Baltimore  ','7481 Coca Cola Drive #100',' Hanover, MD 21046','8:00am - 5:00pm')"  shape="circle" coords="604,197,18" href="#" />
+    <area onmouseover="singleLocation('Albany  ','12089 State Route 9 W West',' West Coxsackie, NY 12192','8:00am - 6:00pm')" shape="circle" coords="583,112,22" href="#" />
+    <area onmouseover="singleLocation('Boston   ','415 Wildwood Avenue',' Woburn, MA 01801','7:00am - 7:00pm')" shape="circle" coords="660,120,16" href="#" />
+    <area onmouseover="singleLocation('Philadelphia ','125 Green Tree Road',' Phoenixville, PA 19460','7:00am - 4:00pm')" shape="circle" coords="596,171,18" href="#" />
+    <area onmouseover="singleLocation('Cranbury ','100 Liberty Way',' Cranbury, NJ 08512','7:00am - 3:00pm')" shape="circle" coords="652,159,18" href="#" />
+    <area onmouseover="singleLocation('Edison ','60 Saw Mill Pond Rd',' Edison, NJ 08817','7:00am - 6:00pm')" shape="circle" coords="678,140,16" href="#" />
+  </map>
+</div>
+
+</TD></TR>
+<TR>
+<TD align=middle>
+<DIV class=main align=center>Confirmation numbers are required in order to pick 
+up merchandise.<BR>Merchandise must be picked up 30 minutes prior to closing. 
+</DIV></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+            </td>
+           </tr>
+          </td>
+         </tr>
+        <!--Lango Added for Template MOD: BOF-->
+       </table>
+      </td>
+    </tr>
+   </table>
+  </td>
+<!--
+              <td align="right" width="5" background="/templates/Pixame_v1/images/infobox/box_bg_r.gif" >
+              <img src="/templates/Pixame_v1/images/infobox/box_bg_r.gif" border="0" alt="box_bg_r.gif." width="5" height="10">              </td>
+-->
+            </tr>
+          </table>
+<!--
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+  <tr>
+    <td class="infoBoxfooter"><img src="/templates/Pixame_v1/images/infobox/center_footer_left.gif" border="0" alt="footer left" width="25" height="1"></td>
+    <td background="/templates/Pixame_v1/images/infobox/center_footer_middle.gif" width="100%" ><img src="/images/pixel_trans.gif" border="0" alt="" width="100%" height="1"></td>
+    <td  nowrap><img src="/templates/Pixame_v1/images/infobox/center_footer_right.gif" border="0" alt="footer right" width="25" height="1"></td>
+  </tr>
+</table>
+-->
+
+<?php
+/**
+ * End of the template
+ * /
+?>

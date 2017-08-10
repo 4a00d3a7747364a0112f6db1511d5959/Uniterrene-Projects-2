@@ -1,0 +1,219 @@
+@font-face {
+	font-family: 'Karla-Regular';
+	src: url(../fonts/Karla-Regular.ttf);
+}
+@font-face {
+	font-family: 'Karla-Italic';
+	src: url(../fonts/Karla-Italic.ttf);
+}
+@font-face {
+	font-family: 'Karla-Bold';
+	src: url(../fonts/Karla-Bold.ttf);
+}
+@font-face {
+	font-family: 'Roboto-Medium';
+	src: url(../fonts/Roboto-Medium.ttf);
+}
+@font-face {
+	font-family: 'OpenSans-Regular';
+	src: url(../fonts/OpenSans-Regular.ttf);
+}
+@font-face {
+	font-family: 'AvenirLTStd-Medium';
+	src: url(../fonts/AvenirLTStd-Medium.ttf)
+}
+@font-face {
+	font-family: 'AvenirLTStd-Black';
+	src: url(../fonts/AvenirLTStd-Black.ttf)
+}
+
+* {
+	box-sizing: border-box
+}
+body {
+	margin: 0;
+	padding: 0 !important;
+	font-family: Karla-Regular;
+}
+body, html {
+	font-size: 16px;
+	height: 100%
+}
+div, table, tr, th, td, th, video, audio, h1, h2, h3, h4, h5, h6, aside, canvas, section, header, footer, nav, span, p, small, big, a, b, strong, img, hr, pre, button, input, textarea, optgroup, ul, li, ol, select, option, blockquote, nav {
+	margin: 0;
+	padding: 0;
+	outline: none;
+	border: none;
+	text-decoration: none;
+	list-style-type: none;
+}
+.clearfix:after {
+	content: "";
+	display: block;
+	height: 0;
+	clear: both;
+	font-size: 0;
+}
+.clear {
+	clear: both
+}
+.container {
+	margin: 0 auto;
+	padding: 0 0px;
+}
+.row {
+	width: 100%;
+	margin: 10px auto
+}
+img {
+	max-width: 100%;
+}
+h1, h2, h3, h4, h5, h6 {
+	-webkit-font-smoothing: antialiased;
+	-moz-font-smoothing: antialiased;
+	-ms-font-smoothing: antialiased;
+	-o-font-smoothing: antialiased;
+}
+h1 {
+	font-family: 'Karla-Bold';
+	font-weight: normal;
+	font-size: 2.625rem;
+}
+h2 {
+	font-family: 'Karla-Regular';
+	font-weight: normal;
+}
+h3 {
+	font-family: 'Karla-Regular';
+	font-weight: normal;
+	font-size: 1.6rem;
+	color: #232323;
+	text-align: left;
+}
+h4 {
+	font-family: 'Karla-Regular';
+	font-size: 17px;
+	color: #262626;
+	font-weight: normal;
+}
+p {
+	font-size: 16px;
+	line-height: 26px;
+	font-weight: normal;
+	text-align: center;
+	margin: 15px 0
+}
+input, textarea, select {
+	width: 100%;
+	height: 47px;
+	margin: 0.125rem 0;
+	border-radius: 0;
+	text-indent: 5px;
+	transition: all .5s ease;
+	-moz-transition: all .5s ease;
+	-webkit-transition: all .5s ease;
+	-o-transition: all .5s ease;
+	-ms-transition: all .5s ease;
+	color: #575555;
+	font-size: 15px;
+	background: rgba(255,255,255,1);
+	border: 1px solid #e5e4e4;
+}
+input:focus, textarea:focus, select:focus {
+	background: rgba(255,255,255,0.93);
+}
+input[type="submit"] {
+	width: 100%;
+	background: transparent;
+	color: #ffffff;
+	text-align: center;
+	line-height: 45px;
+	font-size: 18px;
+	cursor: pointer;
+	transition: all .5s ease;
+	-moz-transition: all .5s ease;
+	-webkit-transition: all .5s ease;
+	-o-transition: all .5s ease;
+	-ms-transition: all .5s ease;
+}
+input[type="submit"]:hover {
+	background: #FFF;
+	color: #f8db3a;
+}
+
+		
+	
+	
+	
+::-moz-placeholder {
+ color:#656565;
+}
+::-ms-placeholder {
+ color:#656565
+}
+::-webkit-placeholder {
+ color:#656565
+}
+::-0-placeholder {
+ color:#656565
+}
+::selection {
+	background: #f00;
+	color: #fff;
+}
+::-moz-selection {
+ background:#f00;
+ color:#fff;
+}
+::-webkit-selection {
+ background:#f00;
+ color:#fff;
+}
+::-o-selection {
+ background:#f00;
+ color:#fff;
+}
+::-ms-selection {
+ background:#f00;
+ color:#fff;
+}
+.f_left {
+	float: left;
+}
+.f_right {
+	float: right;
+}
+a.btn_bor {
+	background: transparent;
+	color: #ffffff;
+	text-align: center;
+	line-height: 45px;
+	font-size: 18px;
+	transition: all .3s ease;
+	-moz-transition: all .3s ease;
+	-webkit-transition: all .3s ease;
+	-o-transition: all .3s ease;
+	-ms-transition: all .3s ease;
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+	border-radius: 25px;
+	border: 1px solid #acacac;
+}
+a.btn_bor:hover {
+	background: rgba(226,226,226,.3);
+}
+a.btn_without_bor {
+	background: #faa013;
+	border-radius: 25px;
+	font-family: 'Fjalla One', sans-serif;
+	font-size: 15px;
+	text-align: center;
+}
+.read_more {
+	color: #faa013;
+	font-size: 15px
+}
+.read_more:hover {
+	text-decoration: underline
+}

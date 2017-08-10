@@ -1,0 +1,139 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magento.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magento.com for more information.
+ *
+ * @category    design
+ * @package     rwd_default
+ * @copyright   Copyright (c) 2006-2016 X.commerce, Inc. and affiliates (http://www.magento.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<!--start Footer Section-->
+<?php $url = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_WEB);?>
+
+<footer>
+  <div id="footer_nav">
+    <div class="container clearfix">
+      <div class="footer_address">
+         <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('footer_logo')->toHtml() ?>
+         <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('footer_address')->toHtml() ?>
+        
+      </div>
+      <div class="footer_group">
+		<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('footer_customer_service')->toHtml() ?>
+      </div>
+      <div class="footer_group">
+		<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('footer_my_account')->toHtml() ?>
+      </div>
+      <div class="footer_group">
+		<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('footer_payment_shipping')->toHtml() ?>
+      </div>
+     
+    </div>
+  </div>
+  <div class="footer_subsidiaries_right">
+    <div class="container clearfix">
+		<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('footer_secure_site')->toHtml() ?>
+    </div>
+  </div>
+  <div class="footer_subsidiaries">
+    <div class="container clearfix">
+		<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('footer_text')->toHtml() ?>
+     
+    </div>
+  </div>
+  
+</footer>
+
+<!--End Footer Section-->
+
+<script type="text/javascript" src="<?php //echo $url?>js/jquery-1.11.0.js"></script>
+<script type="text/javascript" src="<?php //echo $url?>js/custom.js"></script>
+<!--start banner-->
+<script src="<?php echo $url?>js/index.js"></script>
+<!--end banner-->
+<!--start nav-->
+<script src="<?php echo $url?>js/sidenav.js"></script>
+<script>jQuery.noConflict()</script>
+<script>
+  jQuery(document).on('click','.categories_menu', function(){
+    //alert("gdfgft"); 
+    jQuery('.categories_menu ul li ul').slideToggle();
+     
+     
+   });
+ jQuery(function(){
+	 
+	 var shipping_value = jQuery('.shipp_method_uni .price').text();
+	 var grand_total = jQuery('.grand_val .price').text();
+	 
+	 var grand_total_val = grand_total.match(/-?\d+\.?\d*/);
+	 var shipping_value_val = shipping_value.match(/-?\d+\.?\d*/);
+		
+	 var grand_total_final = parseFloat(grand_total_val) + parseFloat(shipping_value_val);
+	 
+	 jQuery('.grand_val .price').html('$'+grand_total_final.toFixed(2));
+
+	 
+	// alert(grand_total_final); 
+	
+	 alert($('#review_totals').find('tr').eq(1).find('td').eq(0).text());
+	 
+	 if(jQuery('#ups_disabled').text() == "yes")
+	 {
+		 jQuery('#rub_flatrate_flatrate').hide();
+	 }
+	 else
+	 {
+		 jQuery('#rub_flatrate_flatrate').show();
+	 }
+
+    var responsiveWidth = 768;
+    var _widthResize;
+
+    jQuery(window).resize(function() {
+        _widthResize = jQuery(this).width() > responsiveWidth;
+    }).resize();
+
+    jQuery('.navBox >ul >li').hover(function(){
+      if(_widthResize){
+        var _this = jQuery(this);
+        _this.addClass('active').children('.sub_menu').stop(true, true).slideDown(300);        
+      }  
+    } , function(){
+      if(_widthResize){
+        jQuery(this).removeClass('active').children('.sub_menu').stop(true, true).hide();
+      }   
+    });
+
+    jQuery('.sub_menu').parent('li').click(function(e) {
+      if(!_widthResize){
+        jQuery(this).children('.sub_menu').stop(true, true).slideToggle(300);
+        e.preventDefault();
+      }    
+    });
+
+    jQuery("#openPageslide").sideNav();
+
+
+
+
+}); 
+</script>
+

@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<layout>
+	<minimumorderfee_add_order_total>
+        <reference name="order_totals">
+            <block type="minimumorderfee/sales_order_totals_minimumorderfee" name="total_minimumorderfee" />
+        </reference>
+    </minimumorderfee_add_order_total>
+	<minimumorderfee_add_invoice_total>
+        <reference name="invoice_totals">
+            <block type="minimumorderfee/sales_order_totals_minimumorderfee" name="total_minimumorderfee" />
+        </reference>
+    </minimumorderfee_add_invoice_total>
+    <minimumorderfee_add_creditmemo_total>
+        <reference name="creditmemo_totals">
+            <block type="minimumorderfee/sales_order_totals_minimumorderfee" name="total_minimumorderfee" />
+        </reference>
+    </minimumorderfee_add_creditmemo_total>
+	<adminhtml_sales_order_view>
+		<update handle="minimumorderfee_add_order_total" />
+	</adminhtml_sales_order_view>
+	<adminhtml_sales_order_invoice_new>
+		<update handle="minimumorderfee_add_invoice_total" />
+	</adminhtml_sales_order_invoice_new>
+	<adminhtml_sales_order_invoice_updateqty>
+		<update handle="minimumorderfee_add_invoice_total" />
+	</adminhtml_sales_order_invoice_updateqty>
+	<adminhtml_sales_order_invoice_view>
+		<update handle="minimumorderfee_add_invoice_total" />
+	</adminhtml_sales_order_invoice_view>
+	<adminhtml_sales_order_creditmemo_new>
+		<update handle="minimumorderfee_add_creditmemo_total" />
+	</adminhtml_sales_order_creditmemo_new>
+	<adminhtml_sales_order_creditmemo_updateqty>
+		<update handle="minimumorderfee_add_creditmemo_total" />
+	</adminhtml_sales_order_creditmemo_updateqty>
+	<adminhtml_sales_order_creditmemo_view>
+		<update handle="minimumorderfee_add_creditmemo_total" />
+	</adminhtml_sales_order_creditmemo_view>
+</layout>

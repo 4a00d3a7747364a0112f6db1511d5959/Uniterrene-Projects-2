@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <MyProject_Catalog>
+            <version>1.0.0</version>
+        </MyProject_Catalog>
+    </modules>
+    <global>
+        <resources>
+            <myproject_catalog_setup>
+                <setup>
+                    <module>MyProject_Catalog</module>
+                    <class>Mage_Catalog_Model_Resource_Setup</class>
+                </setup>
+            </myproject_catalog_setup>
+        </resources>
+    </global>
+</config>

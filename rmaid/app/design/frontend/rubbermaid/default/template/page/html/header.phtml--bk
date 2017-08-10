@@ -1,0 +1,160 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magento.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magento.com for more information.
+ *
+ * @category    design
+ * @package     rwd_default
+ * @copyright   Copyright (c) 2006-2016 X.commerce, Inc. and affiliates (http://www.magento.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+/**
+ * @var Mage_Page_Block_Html_Header $this
+ */
+?>
+
+<?php $url = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_WEB);?>
+<header> 
+  <!--Top Header Section start-->
+  <section id="top-header">
+    <div class="container clearfix">
+      <div class="top-header_left">
+        <ul>
+          <li>
+			  <img src="images/contact_icon.png"/>
+		  </li>
+			<li>
+				<!---Get the phone number-->
+				<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('phone_number')->toHtml(); ?> 
+	    	</li>
+        </ul>
+      </div>
+      <div class="top-header_middle">
+        <ul>
+          <li><img src="images/shipping_icon.png"/></li>
+          <!---Get the header free shipping text-->
+          <li><?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('header_free_shipping')->toHtml(); ?> </span></li>
+        </ul>
+      </div>
+      <div class="top-header_right">
+        <ul>
+          <li><a href="<?php echo $url;?>wishlist"><i class="fa fa-heart" aria-hidden="true"></i><span>My Wishlist</span></a></li>
+          <li> | </li>
+          <li><a href="<?php echo $url;?>customer/account/"><img src="images/user_icon.png"/><span>My Account</span></a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <!--Top Header Section end--> 
+  
+  <!--Middle Header Section start-->
+  <section id="middle-header">
+    <div class="container clearfix">
+      <div class="middle-header_left">
+        <ul>
+			 <!---Get the header logo-->
+          <li><a href="#"><img src="<?php echo $this->getLogoSrc() ?>"/ alt="logo" title="logo"></a></li>
+          <li>Commercial Products</li>
+        </ul>
+      </div>
+      <div class="middle-header_search search">
+		  <!--Get the Search Form-->
+		<?php echo $this->getChildHtml('topSearch') ?>
+      </div>
+      <div class="middle-header-right">
+        <div class="middle-header_cart">
+          <ul>
+            <li> <a href="<?php echo $url;?>checkout/cart"><img src="images/cart_icon.png"/></a>
+            <!--Get the Cart Page Summry Count-->
+              <div class="count"> <span><?php echo Mage::helper('checkout/cart')->getSummaryCount();?></span> </div>
+            </li>
+            <li>
+				<!--Get the Cart Page Summry Count-->
+				<span><?php echo $this->helper('checkout')->formatPrice(Mage::getSingleton('checkout/cart')->getQuote()->getGrandTotal()); ?>
+				</span>
+			</li>
+          </ul>
+        </div>
+        <div class="middle-header_online">
+          <ul>
+            <li><img src="<?php echo $this->getLogoSrcSmall() ?>" alt="Online Reseller" title="Online Reseller"/></li>
+            <li>Online Reseller</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--Middle Header Section end--> 
+ 
+  <!--Navigation Section start-->
+   <nav>
+    <div class="navigation">
+      <div class="container clearfix">
+        <div class="nav_container"> <a id="openPageslide" href="#pageslide"><i class="fa fa-bars" aria-hidden="true"></i> <span>Menu</span></a>
+          <div id="pageslide" class="navBox">
+            <ul>
+              
+              <?php 
+              $url = Mage::getBaseUrl();
+$_helper = Mage::helper('catalog/category');
+$_categories = $_helper->getStoreCategories();
+if (count($_categories) > 0){
+    foreach($_categories as $_category){
+        $_category = Mage::getModel('catalog/category')->load($_category->getId());
+        print_r($_category->getBannerImageUrl());
+        $_subcategories = $_category->getChildrenCategories();
+        if (count($_subcategories) > 0){
+             //print_r($_category->getThumbnailImageUrl());
+          ?>
+          <li class=""><a href="<?php echo $url.$_category->getUrlPath()?>"><?php echo $_category->getName();?> <i class="fa fa-angle-down" aria-hidden="true"></i></a><ul class="sub_menu">
+          <?php  
+            foreach($_subcategories as $_subcategory){?>
+                 
+                  <li><a href="<?php echo $url.$_subcategory->getRequestPath();?>"><span><img src="images/submenu_icon1.png"/></span><?php echo $_subcategory->getName();?></a></li>
+                  
+                
+           <?php }?>
+          </ul> </li>
+           <?php 
+        }
+    }
+}
+?>
+             
+            </ul>
+          </div>
+        </div>
+        <div class="categories_menu">
+          <ul>
+            <li><a href="#"><i class="fa fa-bars" aria-hidden="true"></i> <span>ALL CATEGORIES</span></a>
+              <ul>
+                <li><a href="#">CATEGORIES 1</a></li>
+                <li><a href="#">CATEGORIES 2</a></li>
+                <li><a href="#">CATEGORIES 3</a></li>
+                <li><a href="#">CATEGORIES 4</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <!--Navigation Section end--> 
+</header>
+<!--Header Section end--> 
+

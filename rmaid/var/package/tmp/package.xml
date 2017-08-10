@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package>
+    <name>minimum_order_fee</name>
+    <version>0.1.7</version>
+    <stability>stable</stability>
+    <license>Open Software License (OSL)</license>
+    <channel>community</channel>
+    <extends/>
+    <summary>MinimumorderFee Module is used to apply fee for the minimum order.</summary>
+    <description>This module is used to add some fee for the minimum order. It checks the subtotal, if the subtotal is less than minimum order amount, it adds some fee to the grand total.</description>
+    <notes>error in paypal</notes>
+    <authors><author><name>commercebees</name><user>CommerceBees</user><email>commercebees@ameexusa.com</email></author></authors>
+    <date>2016-01-08</date>
+    <time>13:37:35</time>
+    <contents><target name="magecommunity"><dir><dir name="Ameex"><dir name="MinimumorderFee"><dir name="Block"><dir name="Checkout"><dir name="Total"><file name="Minimumorderfee.php" hash="2ac6dba02061a92ddbbb7f6c52f40efd"/></dir></dir><dir name="Sales"><dir name="Order"><dir name="Totals"><file name="Minimumorderfee.php" hash="453e083a54c94ef309326685b3dfde9b"/></dir></dir></dir></dir><dir name="Helper"><file name="Data.php" hash="b77a1ffaa1a6e8644f5a6d8e61215d97"/></dir><dir name="Model"><file name="Calculation.php" hash="9614043c12b871ca481b655852273c9c"/><file name="Observer.php" hash="f5be70b413e29e54d11d1b85ade54d86"/><dir name="Sales"><dir name="Order"><dir name="Creditmemo"><dir name="Total"><file name="Minimumorderfee.php" hash="e865b993fdcdeb5fa07fb76a7d0be5ce"/></dir></dir><dir name="Invoice"><dir name="Total"><file name="Minimumorderfee.php" hash="3ef96c49bc61697f1f8fb844e113b7b0"/></dir></dir></dir><dir name="Quote"><dir name="Address"><dir name="Total"><file name="Minimumorderfee.php" hash="feb564362bc04d214ced018d41c4f6f1"/></dir></dir><file name="Address.php" hash="5b6d17fd695c869e921a15aaa3a7df1a"/></dir></dir><file name="Value.php" hash="ad6d8ab9e8779f47b13c227c3c027031"/></dir><dir name="controllers"><file name="CartController.php" hash="d04f3175a847d7ec4aa3eb4d31a66109"/></dir><dir name="etc"><file name="config.xml" hash="cc8188667b7fb7222e8704d5505856a3"/><file name="system.xml" hash="7f2338005c278d534ba9fd26df257a9c"/></dir><dir name="sql"><dir name="ameex_minimumorderfee_setup"><file name="Upgrade-0.1.0-0.1.1.php" hash="dcebf42adc69443d3db85f9664bb5449"/><file name="install-0.1.0.php" hash="6255d9eb79ccae8f5ffe6d6202d1df4c"/></dir></dir></dir></dir></dir></target><target name="mageetc"><dir><dir name="modules"><file name="Ameex_MinimumorderFee.xml" hash="2e7539c1ae8b3c207ce3f79a47df9428"/></dir></dir></target><target name="magedesign"><dir><dir name="adminhtml"><dir name="default"><dir name="default"><dir name="layout"><file name="minimumorderfee.xml" hash="a925b6be53c38c50549d2f496c49a4f8"/></dir></dir></dir></dir><dir name="frontend"><dir name="base"><dir name="default"><dir name="layout"><file name="minimumorderfee.xml" hash="203d1cb98bc986252c0b2d52cc0312eb"/></dir><dir name="template"><dir name="checkout"><dir name="total"><file name="minimumorderfee.phtml" hash="136d9fa337c7b2b4c0218adaf6930241"/></dir></dir></dir></dir></dir></dir></dir></target><target name="mage"><dir name="."><file name="CommerceBees_Minimumorder_Fee_Extension_Guide_V0.1.1 .pdf" hash="103ff1b355410d85712c7300c2150f7f"/></dir></target></contents>
+    <compatible/>
+    <dependencies><required><php><min>5.1.0</min><max>6.0.0</max></php></required></dependencies>
+</package>

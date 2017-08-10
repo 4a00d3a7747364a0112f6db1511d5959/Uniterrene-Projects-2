@@ -1,0 +1,214 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magento.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magento.com for more information.
+ *
+ * @category    design
+ * @package     rwd_default
+ * @copyright   Copyright (c) 2006-2016 X.commerce, Inc. and affiliates (http://www.magento.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<?php
+/**
+ * Template for Mage_Page_Block_Html
+ */
+?>
+
+<!DOCTYPE html>
+
+<!--[if lt IE 7 ]> <html lang="<?php echo $this->getLang(); ?>" id="top" class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="<?php echo $this->getLang(); ?>" id="top" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="<?php echo $this->getLang(); ?>" id="top" class="no-js ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="<?php echo $this->getLang(); ?>" id="top" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="<?php echo $this->getLang(); ?>" id="top" class="no-js"> <!--<![endif]-->
+
+<head>
+<?php echo $this->getChildHtml('head') ?>
+</head>
+<body>
+	<?php echo $this->getChildHtml('header') ?>
+	<!--Start Banner Section-->
+<section id="banner">
+  <div class="slider-container">
+    <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('home_main_banner')->toHtml() ?>
+</section>
+<!--End Banner Section--> 
+
+<!--Start Product Categories Section-->
+<section id="Product_Categories">
+  <div class="container clearfix">
+    <h3>Our Product Categories</h3>
+    <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('product_categroies')->toHtml() ?>
+
+  </div>
+  </div>
+</section>
+<!--End Product Categories Section--> 
+
+<!--Start Purchase Orders Section-->
+<section id="Purchase_Orders">
+<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('purchase_order')->toHtml() ?>
+</section>
+<!--End Purchase Orders Section--> 
+
+<!--Start Featured Products Section-->
+<section id="Featured_Products">
+  <div class="container clearfix">
+    <h3>Featured Products</h3>
+    <ul>
+      <li>
+        <div class="Featured_Products_holder"> <img src="images/Deck_Scrub.png" alt="Deck Scrub" title="Deck Scrub"/> </div>
+        <div class="Featured_Products_content">
+          <h2>Bi-Level Deck Scrub</h2>
+          <h4><del>$21.72</del>$13.03</h4>
+          <div class="cart_hover">
+            <ul>
+              <li><a href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
+              <li><a href="#"><i class="fa fa-compress" aria-hidden="true"></i></a></li>
+              <li><a href="#"><i class="fa fa-heart" aria-hidden="true"></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="Featured_Products_holder"> <img src="images/Clear_Bouncer.png" alt="Clear Bouncer" title="Clear Bouncer"/> </div>
+        <div class="Featured_Products_content">
+          <h2>Clear Bouncer® Pitchers</h2>
+          <h4><del>$15.49</del>$9.29</h4>
+          <div class="cart_hover">
+            <ul>
+              <li><a href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
+              <li><a href="#"><i class="fa fa-compress" aria-hidden="true"></i></a></li>
+              <li><a href="#"><i class="fa fa-heart" aria-hidden="true"></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="Featured_Products_holder"> <img src="images/Dolly-Universal.png" alt="Dolly Universal" title="Dolly Universal"/> </div>
+        <div class="Featured_Products_content">
+          <h2>Dolly-Universal Drum Dolly</h2>
+          <h4><del>$150.95</del>$90.59</h4>
+          <div class="cart_hover">
+            <ul>
+              <li><a href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
+              <li><a href="#"><i class="fa fa-compress" aria-hidden="true"></i></a></li>
+              <li><a href="#"><i class="fa fa-heart" aria-hidden="true"></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="Featured_Products_holder"> <img src="images/Bouncer.png" alt="Bouncer" title="Bouncer"/> </div>
+        <div class="Featured_Products_content">
+          <h2>Bouncer® II Pitcher 60 oz </h2>
+          <h4><del>$15.94</del>$9.56</h4>
+          <div class="cart_hover">
+            <ul>
+              <li><a href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
+              <li><a href="#"><i class="fa fa-compress" aria-hidden="true"></i></a></li>
+              <li><a href="#"><i class="fa fa-heart" aria-hidden="true"></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="Featured_Products_holder"> <img src="images/Condiment_Dispenser.png" alt="Condiment Dispenser" title="Condiment Dispenser"/> </div>
+        <div class="Featured_Products_content">
+          <h2>Condiment Dispenser</h2>
+          <h4><del>$84.99</del>$51</h4>
+          <div class="cart_hover">
+            <ul>
+              <li><a href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
+              <li><a href="#"><i class="fa fa-compress" aria-hidden="true"></i></a></li>
+              <li><a href="#"><i class="fa fa-heart" aria-hidden="true"></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="Featured_Products_holder"> <img src="images/Deluxe_Carry.png" alt="Deluxe Carry" title="Deluxe Carry"/> </div>
+        <div class="Featured_Products_content">
+          <h2>Deluxe Carry Caddy </h2>
+          <h4><del>$24.72</del>$14.83</h4>
+          <div class="cart_hover">
+            <ul>
+              <li><a href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
+              <li><a href="#"><i class="fa fa-compress" aria-hidden="true"></i></a></li>
+              <li><a href="#"><i class="fa fa-heart" aria-hidden="true"></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="Featured_Products_holder"> <img src="images/Cart-Trades.png" alt="Cart-Trades" title="Cart-Trades"/> </div>
+        <div class="Featured_Products_content">
+          <h2>Cart-Trades Cart-Black</h2>
+          <h4><del>$643.92</del>$354.16</h4>
+          <div class="cart_hover">
+            <ul>
+              <li><a href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
+              <li><a href="#"><i class="fa fa-compress" aria-hidden="true"></i></a></li>
+              <li><a href="#"><i class="fa fa-heart" aria-hidden="true"></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="Featured_Products_holder"> <img src="images/Cutlery_Bin.png" alt="Cutlery Bin" title="Cutlery Bin"/> </div>
+        <div class="Featured_Products_content">
+          <h2>Cutlery Bin</h2>
+          <h4><del>$19.32</del>$11.59</h4>
+          <div class="cart_hover">
+            <ul>
+              <li><a href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
+              <li><a href="#"><i class="fa fa-compress" aria-hidden="true"></i></a></li>
+              <li><a href="#"><i class="fa fa-heart" aria-hidden="true"></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="Featured_Products_holder"> <img src="images/Dual_Action.png" alt="Dual Action" title="Dual Action"/> </div>
+        <div class="Featured_Products_content">
+          <h2>Dual Action Sweeper</h2>
+          <h4><del>$105.19</del>$63.11</h4>
+          <div class="cart_hover">
+            <ul>
+              <li><a href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
+              <li><a href="#"><i class="fa fa-compress" aria-hidden="true"></i></a></li>
+              <li><a href="#"><i class="fa fa-heart" aria-hidden="true"></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!--End Featured Products Section--> 
+
+<!--Start Payment Section-->
+<section id="payment_return">
+<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('payment_block')->toHtml() ?>
+</section>
+<!--End Payment Section--> 
+
+
+<?php echo $this->getChildHtml('footer') ?>

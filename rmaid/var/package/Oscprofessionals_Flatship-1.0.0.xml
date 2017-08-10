@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<package>
+    <name>Oscprofessionals_Flatship</name>
+    <version>1.0.0</version>
+    <stability>stable</stability>
+    <license uri="http://opensource.org/licenses/osl-3.0.php">Open Software License (OSL)</license>
+    <channel>community</channel>
+    <extends/>
+    <summary>Shipping Based On Category And Product Module allows Admin to add different shipping price for each simple product or category. This extension support all the simple product. On checkout page total shipping charges will display, by calculating shipping charges of each product.</summary>
+    <description>Shipping Based On Category And Product Module allows Admin to add different shipping price for each simple product or category. This extension support all the simple product. On checkout page total shipping charges will display, by calculating shipping charges of each product.&#xD;
+This also gives option for:&#xD;
+&#xD;
+Making the sum of all simple products.&#xD;
+Making the sum of all products with quantity increased.&#xD;
+Setting a default shipping rates(Applied if shipping price is not defined in category or product).&#xD;
+Shipping applied on the base of customer group&#xD;
+Shipping allow to applicable countries</description>
+    <notes>There are no uploaded releases</notes>
+    <authors><author><name>Satish Mantri</name><user>satish</user><email>satish@oscprofessionals.com</email></author></authors>
+    <date>2015-07-29</date>
+    <time>16:48:16</time>
+    <contents><target name="magecommunity"><dir name="Oscprofessionals"><dir name="Flatship"><dir name="Helper"><file name="Data.php" hash="d58da9e786ec93faa594dc8f8160e902"/></dir><dir name="Model"><dir name="Adminhtml"><dir name="System"><dir name="Config"><dir name="Source"><file name="Country.php" hash="176b99bb4ad02557a0dac2e23b5a0e08"/><file name="Option.php" hash="31146964ee2ce01e3d2df61d6769cdf9"/><file name="Priority.php" hash="e01a11c7284f7b540ebea92d7949a419"/></dir></dir></dir></dir><dir name="Carrier"><file name="Oscpflatshiprate.php" hash="0d685a8f2a80213534684c270c7cd51f"/></dir></dir><dir name="etc"><file name="config.xml" hash="7bbf192e5395f34a9d1d58eee1004f69"/><file name="system.xml" hash="da1341452576f54d15f7225ac96cf8ca"/></dir><dir name="sql"><dir name="oscpflatshiprate_setup"><file name="install-1.0.0.php" hash="9a9a0265378435879561dbc0564970c4"/></dir></dir></dir></dir></target><target name="mageetc"><dir name="modules"><file name="Oscprofessionals_Flatship.xml" hash="acb9c33dd3273ef9fddbac8f7662ebf1"/></dir></target></contents>
+    <compatible/>
+    <dependencies><required><php><min>5.2.0</min><max>6.0.0</max></php></required></dependencies>
+</package>
